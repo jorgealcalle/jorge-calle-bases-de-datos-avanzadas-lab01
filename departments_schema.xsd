@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Departments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Department" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DepartmentName" type="xs:string"/>
+              <xs:element name="Employees">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Employee" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FirstName" type="xs:string"/>
+                          <xs:element name="LastName" type="xs:string"/>
+                          <xs:element name="Salary" type="xs:decimal"/>
+                        </xs:sequence>
+                        <xs:attribute name="EmpId" type="xs:integer" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="DeptId" type="xs:integer" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
